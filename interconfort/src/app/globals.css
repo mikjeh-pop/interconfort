@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f6f7f8;
+  --color-paper-2: #eceff1;
+  --color-frost: #d3e0e8;
+  --color-ink: #0e1317;
+  --color-ink-2: #2a333b;
+  --color-steel: #6b7683;
+  --color-cold: #0f3d52;
+  --color-cold-2: #164f69;
+  --color-hatch: #e8871e;
+
+  --font-display: "Archivo Variable", "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --radius-none: 0px;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Signature : règle graduée. Reprend la graduation d'un instrument de mesure,
+   en écho aux sondes calibrées qui font la valeur des machines. */
+.rule-tick {
+  height: 10px;
+  background-image: repeating-linear-gradient(
+    to right,
+    color-mix(in srgb, var(--color-steel) 55%, transparent) 0 1px,
+    transparent 1px 12px
+  );
+  border-top: 1px solid color-mix(in srgb, var(--color-steel) 35%, transparent);
+}
+.rule-tick--light {
+  background-image: repeating-linear-gradient(
+    to right,
+    color-mix(in srgb, white 40%, transparent) 0 1px,
+    transparent 1px 12px
+  );
+  border-top-color: color-mix(in srgb, white 25%, transparent);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+  font-variation-settings: "wdth" 105;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-steel);
+}
+
+.data {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--color-hatch);
+  outline-offset: 3px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal[data-shown="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Sans JavaScript, les blocs animés au défilement restent visibles. */
+@media (scripting: none) {
+  .reveal { opacity: 1; transform: none; }
+}
