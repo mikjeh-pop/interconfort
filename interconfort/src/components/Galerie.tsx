@@ -9,7 +9,9 @@ export default function Galerie({ images }: { images: Img[] }) {
   const fermer = useCallback(() => setActif(null), []);
   const deplacer = useCallback(
     (pas: number) =>
-      setActif((i) => (i === null ? null : (i + pas + images.length) % images.length)),
+      setActif((i) =>
+        i === null ? null : (i + pas + images.length) % images.length,
+      ),
     [images.length],
   );
 
@@ -48,7 +50,9 @@ export default function Galerie({ images }: { images: Img[] }) {
                 />
               </span>
               {img.legende ? (
-                <span className="mt-2 block text-xs leading-snug text-steel">{img.legende}</span>
+                <span className="mt-2 block text-xs leading-snug text-steel">
+                  {img.legende}
+                </span>
               ) : null}
             </button>
           </li>
@@ -64,7 +68,8 @@ export default function Galerie({ images }: { images: Img[] }) {
         >
           <div className="flex items-center justify-between gap-4">
             <p className="data text-xs text-frost/70">
-              {String(actif + 1).padStart(2, "0")} / {String(images.length).padStart(2, "0")}
+              {String(actif + 1).padStart(2, "0")} /{" "}
+              {String(images.length).padStart(2, "0")}
             </p>
             <button
               type="button"
@@ -94,7 +99,9 @@ export default function Galerie({ images }: { images: Img[] }) {
             >
               ← Précédent
             </button>
-            <p className="max-w-md text-center text-xs text-frost/80">{images[actif].legende}</p>
+            <p className="max-w-md text-center text-xs text-frost/80">
+              {images[actif].legende}
+            </p>
             <button
               type="button"
               onClick={() => deplacer(1)}

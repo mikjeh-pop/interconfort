@@ -20,7 +20,10 @@ const fil = [
 export default function Page() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd(fil)) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd(fil)) }}
+      />
       <Fil items={fil} />
 
       <section className="border-b border-ink/10">
@@ -31,9 +34,10 @@ export default function Page() {
               Présentez-nous votre projet
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-2">
-              Plus votre description est précise, plus notre réponse le sera. Les formats
-              d’emballage, la température exigée et le lieu d’installation sont les trois éléments
-              qui déterminent la configuration.
+              Plus votre description est précise, plus notre réponse le sera.
+              Les formats d’emballage, la température exigée et le lieu
+              d’installation sont les trois éléments qui déterminent la
+              configuration.
             </p>
           </div>
         </Container>
@@ -83,8 +87,13 @@ export default function Page() {
                   {societe.contacts.map((c) => (
                     <li key={c.email}>
                       <p className="text-ink">{c.nom}</p>
-                      <p className="mt-1 text-xs leading-snug text-steel">{c.zone}</p>
-                      <a href={`mailto:${c.email}`} className="mt-1 block text-cold underline-offset-4 hover:underline">
+                      <p className="mt-1 text-xs leading-snug text-steel">
+                        {c.zone}
+                      </p>
+                      <a
+                        href={`mailto:${c.email}`}
+                        className="mt-1 block text-cold underline-offset-4 hover:underline"
+                      >
                         {c.email}
                       </a>
                     </li>

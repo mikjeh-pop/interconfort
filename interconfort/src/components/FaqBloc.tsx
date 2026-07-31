@@ -16,7 +16,9 @@ export default function FaqBloc({ faq }: { faq: Faq[] }) {
               +
             </span>
           </summary>
-          <p className="max-w-3xl pb-6 text-[0.95rem] leading-relaxed text-ink-2">{f.r}</p>
+          <p className="max-w-3xl pb-6 text-[0.95rem] leading-relaxed text-ink-2">
+            {f.r}
+          </p>
         </details>
       ))}
     </div>

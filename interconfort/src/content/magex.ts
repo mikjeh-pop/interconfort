@@ -1,4 +1,5 @@
 import type { Spec } from "./solutions";
+import { machinesMagex } from "./medias-distants";
 
 export const magex = {
   seo: {
@@ -44,6 +45,7 @@ export const magex = {
   modeles: [
     {
       nom: "Big store chocolatiers",
+      visuel: machinesMagex.bigStoreChocolatiers,
       specs: [
         { label: "Plateaux", valeur: "8" },
         { label: "Sélections", valeur: "112" },
@@ -56,6 +58,7 @@ export const magex = {
     },
     {
       nom: "Big store",
+      visuel: machinesMagex.bigStore,
       specs: [
         { label: "Sélections", valeur: "112" },
         { label: "Autonomie", valeur: "2 240 articles" },
@@ -68,6 +71,7 @@ export const magex = {
     },
     {
       nom: "Big store 17 pouces",
+      visuel: machinesMagex.bigStore17,
       specs: [
         { label: "Plateaux", valeur: "8" },
         { label: "Sélections", valeur: "112" },
@@ -80,6 +84,7 @@ export const magex = {
     },
     {
       nom: "Double Evo",
+      visuel: machinesMagex.doubleEvo,
       specs: [
         { label: "Capacité", valeur: "2 880 articles maximum" },
         { label: "Stock", valeur: "Réfrigéré à l'arrière" },

@@ -43,6 +43,8 @@ Aucune clé n'est présente dans le code. Si les variables d'envoi ne sont pas d
 |---|---|
 | `/` | Accueil : positionnement, marchés, aperçu des solutions, bloc Fresh Food Store, Pharmashop, Magex, logiciel, méthode, références |
 | `/solutions` | Synthèse et tableau comparatif des modèles |
+| `/secteurs` | Index des huit pages métier |
+| `/secteurs/[slug]` | Huit pages métier : traiteurs, boulangerie, chocolatiers, producteurs, pharmacies, surgelés, entreprises, commerces spécialisés |
 | `/solutions/fresh-food-store` | Fiche complète : gestion du froid, plateaux, capacités, exploitation, galerie, FAQ |
 | `/solutions/multi-610` | Fiche complète : ascenseur, systèmes de stockage, configurations, options, galerie, FAQ |
 | `/solutions/igloo` | Fiche complète : froid négatif, stockage, installation, galerie, FAQ |
@@ -56,6 +58,22 @@ Aucune clé n'est présente dans le code. Si les variables d'envoi ne sont pas d
 | `/sitemap.xml`, `/robots.txt`, 404 personnalisée | |
 
 Les anciennes URL WordPress sont redirigées en 301 vers les nouvelles (voir `next.config.ts`).
+
+## Positionnement face à la concurrence
+
+Le concurrent français de référence est Magex France (magexfrance.fr), distributeur des mêmes technologies italiennes. Analyse comparative et choix retenus :
+
+| Point | Magex France | Ce site |
+|---|---|---|
+| Pages métier | 9 pages sectorielles — leur principal atout SEO | 8 pages métier structurées autour de la contrainte propre à chaque activité |
+| Données techniques | Aucune cote, aucune capacité publiée | Dimensions, capacités, températures et puissances sur chaque fiche |
+| Comparatif entre modèles | Absent | Tableau comparatif sur trois machines |
+| FAQ | Une page générique | FAQ dédiée par solution, en données structurées |
+| Antériorité | Fondé en 1998 | Depuis 1986 |
+| Conception propre | Distributeur uniquement | Fresh Food Store conçu par Inter-Confort |
+| Design | Gabarit d'agence | Direction graphique spécifique |
+
+Deux forces du concurrent restent à reprendre plus tard : les pages de référencement local par ville, et les études de cas clients nommés utilisées comme preuve sociale.
 
 ## Référencement
 
@@ -75,7 +93,11 @@ Tout le texte modifiable est centralisé dans `src/content/` : `site.ts` (coordo
 
 29 visuels sont intégrés dans `public/images/`, répartis en trois dossiers (`fresh-food-store/`, `multi-610/`, `igloo/`), tous au format WebP.
 
-**Provenance :** archive statique de distri-popfrais.fr fournie par le client. Les fichiers ont été renommés pour supprimer toute référence aux marques commerciales françaises ; un doublon strict et un logo de marque tierce ont été écartés.
+**Deux sources.** Les visuels des trois machines principales sont des fichiers locaux, en WebP, dans `public/images/`. Le logo, les cinq machines Magex et les sept photos Pharmashop sont en revanche servis depuis le site actuel, via `src/content/medias-distants.ts` et les `remotePatterns` déclarés dans `next.config.ts`.
+
+**C'est une solution de transition, à remplacer.** Elle permet à la démonstration d'afficher les vraies photos sans attendre la récupération des fichiers, mais elle crée une dépendance au site actuel : si celui-ci change ou disparaît, ces images cassent. Avant la mise en production définitive, télécharger ces fichiers, les convertir en WebP, les déposer dans `public/images/` et mettre à jour `medias-distants.ts`. Ces images utilisent `unoptimized` afin d'être chargées directement par le navigateur plutôt que par l'optimiseur Vercel, ce qui évite un échec de rendu si le domaine distant devient inaccessible côté serveur.
+
+**Provenance des fichiers locaux :** archive statique de distri-popfrais.fr fournie par le client. Les fichiers ont été renommés pour supprimer toute référence aux marques commerciales françaises ; un doublon strict et un logo de marque tierce ont été écartés.
 
 **Contrôle des noms interdits.** Aucune occurrence de POP'FRAIS, POP'TOUT, POP'ICE, POP'BOX ni Multi Pro Matik dans les noms de fichiers, les textes, les balises alt, les métadonnées ou le code source. Le contrôle est reproductible :
 
@@ -111,7 +133,9 @@ Ces points sont signalés dans l'interface par un marqueur ▲ ou par un encadr�
 
 ## Reste à faire
 
-- Intégrer les visuels Pharmashop, Magex et les réalisations.
+- Rapatrier localement les visuels encore servis par interconfort.be (logo, Magex, Pharmashop).
+- Récupérer les 62 réalisations photographiées du site actuel.
+- Ajouter des pages de référencement local par ville, et des études de cas clients nommés.
 - Trancher les points de validation ci-dessus.
 - Déployer une prévisualisation Vercel et effectuer la recette visuelle sur ordinateur et mobile (non réalisable dans l'environnement de développement utilisé pour ce livrable, sans accès navigateur ni CLI Vercel).
 - Décider du sort de la quatrième solution présente dans l'archive source (casiers automatisés), absente du périmètre initial.

@@ -37,9 +37,10 @@ export default function Page() {
               Nos solutions de vente automatisée
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-2">
-              La bonne machine dépend de trois choses : la température que vos produits exigent, la
-              façon dont ils supportent d’être manipulés, et l’endroit où l’appareil sera installé.
-              Voici comment nos solutions se répartissent.
+              La bonne machine dépend de trois choses : la température que vos
+              produits exigent, la façon dont ils supportent d’être manipulés,
+              et l’endroit où l’appareil sera installé. Voici comment nos
+              solutions se répartissent.
             </p>
           </div>
         </Container>
@@ -62,8 +63,12 @@ export default function Page() {
                     />
                   </div>
                   <p className="eyebrow mt-5">{s.categorie}</p>
-                  <h2 className="display mt-2 text-2xl text-ink group-hover:text-cold">{s.nom}</h2>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-2">{s.accroche}</p>
+                  <h2 className="display mt-2 text-2xl text-ink group-hover:text-cold">
+                    {s.nom}
+                  </h2>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-2">
+                    {s.accroche}
+                  </p>
                   <p className="mt-4 text-sm text-cold underline-offset-4 group-hover:underline">
                     Voir la fiche →
                   </p>
@@ -76,7 +81,9 @@ export default function Page() {
 
       <section className="border-b border-ink/10 bg-paper-2 py-16 sm:py-24">
         <Container>
-          <TitreSection eyebrow="Comparatif">Choisir selon la contrainte principale.</TitreSection>
+          <TitreSection eyebrow="Comparatif">
+            Choisir selon la contrainte principale.
+          </TitreSection>
           <div className="mt-12 overflow-x-auto">
             <table className="w-full min-w-[720px] border-collapse text-left">
               <caption className="sr-only">
@@ -84,12 +91,22 @@ export default function Page() {
               </caption>
               <thead>
                 <tr className="border-b border-ink/25">
-                  <th scope="col" className="eyebrow py-4 pr-6 align-bottom font-normal">
+                  <th
+                    scope="col"
+                    className="eyebrow py-4 pr-6 align-bottom font-normal"
+                  >
                     Critère
                   </th>
                   {comparatif.colonnes.map((c) => (
-                    <th key={c.slug} scope="col" className="py-4 pr-6 align-bottom">
-                      <Link href={c.href} className="display text-lg text-ink hover:text-cold">
+                    <th
+                      key={c.slug}
+                      scope="col"
+                      className="py-4 pr-6 align-bottom"
+                    >
+                      <Link
+                        href={c.href}
+                        className="display text-lg text-ink hover:text-cold"
+                      >
                         {c.nom}
                       </Link>
                     </th>
@@ -99,7 +116,10 @@ export default function Page() {
               <tbody>
                 {comparatif.lignes.map((l) => (
                   <tr key={l.label} className="border-b border-ink/10">
-                    <th scope="row" className="py-4 pr-6 text-sm font-normal text-steel">
+                    <th
+                      scope="row"
+                      className="py-4 pr-6 text-sm font-normal text-steel"
+                    >
                       {l.label}
                     </th>
                     {l.valeurs.map((v, i) => (
@@ -113,8 +133,9 @@ export default function Page() {
             </table>
           </div>
           <p className="mt-6 text-xs text-steel">
-            Le nombre de sélections de l’IGLOO correspond à six plateaux de neuf sélections. Les
-            valeurs indiquées sont des maxima : la configuration réelle dépend des emballages.
+            Le nombre de sélections de l’IGLOO correspond à six plateaux de neuf
+            sélections. Les valeurs indiquées sont des maxima : la configuration
+            réelle dépend des emballages.
           </p>
         </Container>
       </section>
@@ -132,12 +153,15 @@ export default function Page() {
               />
               <h3 className="display mt-5 text-2xl text-ink">Pharmashop</h3>
               <p className="mt-3 max-w-lg text-sm leading-relaxed text-ink-2">
-                Délivrance automatisée en officine : retrait de commande après identification,
-                ordonnances électroniques, guichet de garde et raccordement possible au robot de la
-                pharmacie.
+                Délivrance automatisée en officine : retrait de commande après
+                identification, ordonnances électroniques, guichet de garde et
+                raccordement possible au robot de la pharmacie.
               </p>
               <p className="mt-5">
-                <Link href="/pharmashop" className="text-sm text-cold underline-offset-4 hover:underline">
+                <Link
+                  href="/pharmashop"
+                  className="text-sm text-cold underline-offset-4 hover:underline"
+                >
                   Découvrir Pharmashop →
                 </Link>
               </p>
@@ -147,14 +171,19 @@ export default function Page() {
                 description="Big store chocolatiers, 112 sélections à ascenseur robotisé."
                 ratio="16 / 10"
               />
-              <h3 className="display mt-5 text-2xl text-ink">Technologies Magex</h3>
+              <h3 className="display mt-5 text-2xl text-ink">
+                Technologies Magex
+              </h3>
               <p className="mt-3 max-w-lg text-sm leading-relaxed text-ink-2">
-                Ascenseur robotisé, grandes capacités jusqu’à 112 sélections, écrans tactiles et
-                contrôle du produit avant livraison. Le socle technique sur lequel nos conceptions
-                se sont construites.
+                Ascenseur robotisé, grandes capacités jusqu’à 112 sélections,
+                écrans tactiles et contrôle du produit avant livraison. Le socle
+                technique sur lequel nos conceptions se sont construites.
               </p>
               <p className="mt-5">
-                <Link href="/technologies-magex" className="text-sm text-cold underline-offset-4 hover:underline">
+                <Link
+                  href="/technologies-magex"
+                  className="text-sm text-cold underline-offset-4 hover:underline"
+                >
                   Explorer les technologies Magex →
                 </Link>
               </p>

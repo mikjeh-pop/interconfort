@@ -12,11 +12,11 @@ export default function SpecTable({
   return (
     <div>
       {titre ? (
-        <h3 className={`eyebrow mb-4 ${clair ? "!text-frost" : ""}`}>{titre}</h3>
+        <h3 className={`eyebrow mb-4 ${clair ? "!text-frost" : ""}`}>
+          {titre}
+        </h3>
       ) : null}
-      <dl
-        className={`border-t ${clair ? "border-white/20" : "border-ink/15"}`}
-      >
+      <dl className={`border-t ${clair ? "border-white/20" : "border-ink/15"}`}>
         {specs.map((s) => (
           <div
             key={s.label}
@@ -24,7 +24,9 @@ export default function SpecTable({
               clair ? "border-white/12" : "border-ink/10"
             }`}
           >
-            <dt className={`text-sm ${clair ? "text-frost" : "text-steel"}`}>{s.label}</dt>
+            <dt className={`text-sm ${clair ? "text-frost" : "text-steel"}`}>
+              {s.label}
+            </dt>
             <dd className={`data text-sm ${clair ? "text-white" : "text-ink"}`}>
               {s.valeur}
               {s.note ? (

@@ -26,14 +26,16 @@ export default function Page() {
                     Chaque format a sa place.
                   </TitreSection>
                   <p className="mt-8 max-w-xl leading-relaxed text-ink-2">
-                    Spirales simples ou doubles, tapis et séparateurs cohabitent sur six plateaux
-                    pour accueillir cornets, pots, boîtes, sachets ou barquettes. Une configuration
-                    spécifique permet de maintenir et de distribuer les cônes glacés sans les
+                    Spirales simples ou doubles, tapis et séparateurs cohabitent
+                    sur six plateaux pour accueillir cornets, pots, boîtes,
+                    sachets ou barquettes. Une configuration spécifique permet
+                    de maintenir et de distribuer les cônes glacés sans les
                     coucher.
                   </p>
                   <p className="mt-6 max-w-xl leading-relaxed text-ink-2">
-                    L’ascenseur accompagne le produit jusqu’à une zone de retrait de 150 × 695 mm,
-                    dimensionnée pour les emballages volumineux.
+                    L’ascenseur accompagne le produit jusqu’à une zone de
+                    retrait de 150 × 695 mm, dimensionnée pour les emballages
+                    volumineux.
                   </p>
                 </div>
                 <Reveal>
@@ -66,17 +68,24 @@ export default function Page() {
                   </div>
                 </Reveal>
                 <div>
-                  <TitreSection eyebrow="Installation">Intérieur ou extérieur.</TitreSection>
+                  <TitreSection eyebrow="Installation">
+                    Intérieur ou extérieur.
+                  </TitreSection>
                   <p className="mt-8 max-w-xl leading-relaxed text-ink-2">
-                    Le système de refroidissement et l’isolation renforcée permettent d’envisager
-                    une implantation extérieure. Le toit de protection abrite la machine des
-                    intempéries et porte la hauteur totale à 2 356 mm.
+                    Le système de refroidissement et l’isolation renforcée
+                    permettent d’envisager une implantation extérieure. Le toit
+                    de protection abrite la machine des intempéries et porte la
+                    hauteur totale à 2 356 mm.
                   </p>
                   <ul className="mt-10 space-y-3 border-t border-ink/15 pt-8 text-sm text-ink-2">
                     <li>Vente en continu, y compris la nuit et le week-end</li>
                     <li>Vitrine éclairée par LED</li>
-                    <li>Habillage personnalisable aux couleurs de l’activité</li>
-                    <li>Étude préalable de l’emplacement et des raccordements</li>
+                    <li>
+                      Habillage personnalisable aux couleurs de l’activité
+                    </li>
+                    <li>
+                      Étude préalable de l’emplacement et des raccordements
+                    </li>
                   </ul>
                 </div>
               </div>

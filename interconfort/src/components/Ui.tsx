@@ -8,7 +8,9 @@ export function Container({
   className?: string;
 }) {
   return (
-    <div className={`mx-auto w-full max-w-[1400px] px-5 sm:px-8 lg:px-12 ${className}`}>
+    <div
+      className={`mx-auto w-full max-w-[1400px] px-5 sm:px-8 lg:px-12 ${className}`}
+    >
       {children}
     </div>
   );
@@ -30,7 +32,9 @@ export function TitreSection({
   return (
     <div className="max-w-4xl">
       {eyebrow ? (
-        <p className={`eyebrow mb-5 ${clair ? "!text-frost" : ""}`}>{eyebrow}</p>
+        <p className={`eyebrow mb-5 ${clair ? "!text-frost" : ""}`}>
+          {eyebrow}
+        </p>
       ) : null}
       <h2
         className={`display text-[clamp(1.85rem,4.2vw,3.35rem)] ${
@@ -56,7 +60,8 @@ export function Bouton({
     "inline-flex items-center gap-3 px-7 py-4 text-sm font-medium tracking-wide transition-colors duration-200";
   const styles = {
     plein: "bg-ink text-white hover:bg-cold",
-    ligne: "border border-ink/25 text-ink hover:border-ink hover:bg-ink hover:text-white",
+    ligne:
+      "border border-ink/25 text-ink hover:border-ink hover:bg-ink hover:text-white",
     clair: "border border-white/35 text-white hover:bg-white hover:text-ink",
   }[variante];
   return (
@@ -70,5 +75,10 @@ export function Bouton({
 }
 
 export function RuleTick({ clair = false }: { clair?: boolean }) {
-  return <div aria-hidden="true" className={`rule-tick ${clair ? "rule-tick--light" : ""}`} />;
+  return (
+    <div
+      aria-hidden="true"
+      className={`rule-tick ${clair ? "rule-tick--light" : ""}`}
+    />
+  );
 }

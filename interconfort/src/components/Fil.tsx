@@ -1,9 +1,16 @@
 import Link from "next/link";
 import { Container } from "./Ui";
 
-export default function Fil({ items }: { items: { nom: string; href: string }[] }) {
+export default function Fil({
+  items,
+}: {
+  items: { nom: string; href: string }[];
+}) {
   return (
-    <nav aria-label="Fil d'Ariane" className="border-b border-ink/10 bg-paper-2/60">
+    <nav
+      aria-label="Fil d'Ariane"
+      className="border-b border-ink/10 bg-paper-2/60"
+    >
       <Container>
         <ol className="data flex flex-wrap items-center gap-2 py-3 text-[0.7rem] text-steel">
           {items.map((it, i) => (
@@ -14,7 +21,10 @@ export default function Fil({ items }: { items: { nom: string; href: string }[] 
                   {it.nom}
                 </span>
               ) : (
-                <Link href={it.href} className="underline-offset-4 hover:underline">
+                <Link
+                  href={it.href}
+                  className="underline-offset-4 hover:underline"
+                >
                   {it.nom}
                 </Link>
               )}

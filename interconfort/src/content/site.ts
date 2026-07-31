@@ -47,6 +47,8 @@ export const societe = {
   ],
 };
 
+import { secteurs } from "./secteurs";
+
 export type NavItem = {
   libelle: string;
   href: string;
@@ -85,6 +87,15 @@ export const navigation: NavItem[] = [
         description: "Ascenseur robotisé, grandes capacités, projets sur mesure",
       },
     ],
+  },
+  {
+    libelle: "Secteurs",
+    href: "/secteurs",
+    enfants: secteurs.map((s) => ({
+      libelle: s.nom,
+      href: `/secteurs/${s.slug}`,
+      description: s.accroche,
+    })),
   },
   { libelle: "Logiciel", href: "/logiciel" },
   { libelle: "Réalisations", href: "/realisations" },

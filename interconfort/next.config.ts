@@ -30,6 +30,12 @@ const anciennesUrls: { source: string; destination: string }[] = [
 const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
+    // Transition : certains visuels sont encore servis par le site actuel.
+    // À retirer une fois les fichiers rapatriés dans /public/images.
+    remotePatterns: [
+      { protocol: "https", hostname: "interconfort.be", pathname: "/wp-content/uploads/**" },
+      { protocol: "https", hostname: "www.interconfort.be", pathname: "/wp-content/uploads/**" },
+    ],
   },
   async redirects() {
     return [

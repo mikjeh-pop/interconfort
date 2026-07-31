@@ -1,3 +1,5 @@
+import { machinesMagex, photosPharmashop } from "./medias-distants";
+
 export type Realisation = {
   titre: string;
   categorie: string;
@@ -73,18 +75,18 @@ export const realisations: Realisation[] = [
       h: 408,
     },
   },
-  { titre: "Console Pharma « Night & Safe »", categorie: "Pharmashop", aFournir: "Console intégrée en façade d'officine" },
-  { titre: "Guichet de garde", categorie: "Pharmashop", aFournir: "Guichet de nuit en service" },
-  { titre: "Pharma 24H « Store »", categorie: "Pharmashop", aFournir: "Distributeur de parapharmacie 72 sélections" },
-  { titre: "Big store chocolatiers", categorie: "Chocolatiers", aFournir: "Distributeur de pralines à ascenseur robotisé" },
-  { titre: "Easy Touch chocolatiers", categorie: "Chocolatiers", aFournir: "Installation chez un chocolatier" },
+  { titre: "Console Pharma « Night & Safe »", categorie: "Pharmashop", legende: photosPharmashop[0].legende, image: { ...photosPharmashop[0], w: 1200, h: 1600 } },
+  { titre: "Guichet de garde", categorie: "Pharmashop", legende: photosPharmashop[5].legende, image: { ...photosPharmashop[5], w: 1200, h: 1600 } },
+  { titre: "Pharma 24H « Store »", categorie: "Pharmashop", legende: "72 sélections, ascenseur robotisé", image: { ...machinesMagex.pharma24h, w: 900, h: 1200 } },
+  { titre: "Big store chocolatiers", categorie: "Chocolatiers", legende: "112 sélections, écran tactile 22 pouces", image: { ...machinesMagex.bigStoreChocolatiers, w: 900, h: 1200 } },
+  { titre: "Big store écran 17 pouces", categorie: "Chocolatiers", legende: "Contrôle du produit avant livraison", image: { ...machinesMagex.bigStore17, w: 900, h: 1200 } },
   { titre: "Evo boulangerie", categorie: "Boulangeries", aFournir: "Distributeur installé en boulangerie" },
   { titre: "SMART sandwicheries", categorie: "Boulangeries", aFournir: "Distributeur de sandwicherie" },
   { titre: "Easy Touch saucissons", categorie: "Alimentation", aFournir: "Distributeur de charcuterie sèche" },
   { titre: "Distribution de produits laitiers", categorie: "Alimentation", aFournir: "Vente directe producteur" },
-  { titre: "Big store", categorie: "Magex", aFournir: "Configuration 112 sélections à froid actif" },
-  { titre: "Double Evo", categorie: "Magex", aFournir: "Configuration double à stock réfrigéré arrière" },
-  { titre: "Intégration en façade", categorie: "Installations personnalisées", aFournir: "Machine encastrée dans une devanture" },
+  { titre: "Big store", categorie: "Magex", legende: "Contrôle actif de température", image: { ...machinesMagex.bigStore, w: 900, h: 1200 } },
+  { titre: "Double Evo", categorie: "Magex", legende: "Stock réfrigéré à l'arrière", image: { ...machinesMagex.doubleEvo, w: 900, h: 1200 } },
+  { titre: "Intégration en façade", categorie: "Installations personnalisées", legende: photosPharmashop[2].legende, image: { ...photosPharmashop[2], w: 1200, h: 1600 } },
   { titre: "Implantation sous abri", categorie: "Installations personnalisées", aFournir: "Distributeur protégé par un abri sur mesure" },
 ];
 
