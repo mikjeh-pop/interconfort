@@ -111,6 +111,20 @@ export const boutons = {
   toutesRealisations: "Toutes les réalisations",
 };
 
+/**
+ * Camion showroom : dispositif présent sur chaque fiche du site actuel
+ * (« Demandez le passage de notre camion-expo »).
+ * Le visuel disponible ne fait que 100 × 58 px : ne jamais l'afficher
+ * au-delà d'environ 120 px de large, il deviendrait flou.
+ * Le contenu du camion et la zone couverte restent à préciser par Inter-Confort.
+ */
+export const camionExpo = {
+  titre: "Le camion showroom vient à vous",
+  texte:
+    "Voir une machine en photo ne dit rien de son encombrement réel, de la hauteur de la trappe ou de la façon dont un produit est déposé. Nous nous déplaçons avec notre camion showroom : vous manipulez l'appareil sur place, avec vos propres produits et vos propres emballages, avant toute décision.",
+  bouton: "Demandez le passage de notre camion showroom",
+};
+
 export const marches = [
   "Traiteurs et restaurateurs",
   "Boulangeries et pâtisseries",

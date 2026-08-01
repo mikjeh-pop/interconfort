@@ -19,6 +19,7 @@ const CHAMPS = [
   ["emballages", "Dimensions des emballages"],
   ["capacite", "Capacité souhaitée"],
   ["description", "Description du projet"],
+  ["camionExpo", "Passage du camion-expo demandé"],
 ] as const;
 
 function estEmail(v: string) {
@@ -55,7 +56,10 @@ export async function POST(request: Request) {
   }
 
   const lignes = CHAMPS.filter(([cle]) => (charge[cle] ?? "").trim())
-    .map(([cle, libelle]) => `${libelle} : ${charge[cle].trim()}`)
+    .map(([cle, libelle]) => {
+      const v = charge[cle].trim();
+      return `${libelle} : ${v === "on" ? "oui" : v}`;
+    })
     .join("\n");
 
   const cle = process.env.RESEND_API_KEY;

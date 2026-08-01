@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 const secteurs = [
@@ -31,6 +31,9 @@ const label = "mb-2 block text-sm text-ink-2";
 
 export default function FormulaireProjet() {
   const router = useRouter();
+  const params = useSearchParams();
+  /** Arrivée depuis le camion showroom : la case est cochée d'avance. */
+  const demandeCamion = params.get("objet") === "camion-showroom";
   const [envoi, setEnvoi] = useState(false);
   const [erreur, setErreur] = useState<string | null>(null);
 
@@ -62,6 +65,12 @@ export default function FormulaireProjet() {
 
   return (
     <form onSubmit={onSubmit} noValidate={false} className="space-y-10">
+      {demandeCamion ? (
+        <p className="border-l-2 border-hatch bg-paper-2 px-5 py-4 text-sm leading-relaxed text-ink-2">
+          Vous demandez le passage du camion showroom. Précisez votre adresse et
+          vos disponibilités dans la description : nous vous proposerons une date.
+        </p>
+      ) : null}
       {/* Piège à robots : invisible pour les humains, ignoré par les lecteurs d'écran. */}
       <div className="absolute left-[-9999px]" aria-hidden="true">
         <label htmlFor="societe_web">Ne pas remplir</label>
@@ -273,6 +282,19 @@ export default function FormulaireProjet() {
       </fieldset>
 
       <div className="space-y-5">
+        <label className="flex items-start gap-3 text-sm text-ink-2">
+          <input
+            type="checkbox"
+            name="camionExpo"
+            defaultChecked={demandeCamion}
+            className="mt-1 accent-cold"
+          />
+          <span>
+            Je souhaite le passage du camion-expo pour voir une machine sur
+            place.
+          </span>
+        </label>
+
         <label className="flex items-start gap-3 text-sm text-ink-2">
           <input
             type="checkbox"

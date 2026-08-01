@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CamionExpo from "@/components/CamionExpo";
 import Fil from "@/components/Fil";
 import Reveal from "@/components/Reveal";
 import SpecTable from "@/components/SpecTable";
@@ -137,6 +138,8 @@ export default function Page() {
           </dl>
         </Container>
       </section>
+
+      <CamionExpo />
 
       <section className="bg-ink text-white">
         <Container>

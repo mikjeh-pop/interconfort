@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import BandeauCamion from "@/components/BandeauCamion";
 import BlocReferences from "@/components/BlocReferences";
 import Compteur from "@/components/Compteur";
 import HeroCarousel from "@/components/HeroCarousel";
@@ -216,6 +217,8 @@ export default function Accueil() {
           </ul>
         </Container>
       </section>
+
+      <BandeauCamion />
 
       {/* ── Solutions ────────────────────────────────────────── */}
       <section className="border-b border-ink/10 py-20 sm:py-28">

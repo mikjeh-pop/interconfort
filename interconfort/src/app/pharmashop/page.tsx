@@ -1,5 +1,6 @@
 import Image from "next/image";
 import FaqBloc from "@/components/FaqBloc";
+import CamionExpo from "@/components/CamionExpo";
 import Fil from "@/components/Fil";
 import Reveal from "@/components/Reveal";
 import SpecTable from "@/components/SpecTable";
@@ -205,6 +206,8 @@ export default function Page() {
           </ul>
         </Container>
       </section>
+
+      <CamionExpo />
 
       <section className="border-b border-ink/10 bg-paper-2 py-20 sm:py-24">
         <Container>

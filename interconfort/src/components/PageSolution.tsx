@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Fil from "./Fil";
 import FaqBloc from "./FaqBloc";
+import CamionExpo from "./CamionExpo";
 import Galerie from "./Galerie";
 import Reveal from "./Reveal";
 import SousNav from "./SousNav";
@@ -169,6 +170,8 @@ export default function PageSolution({
           </div>
         </Container>
       </section>
+
+      <CamionExpo />
 
       <section id="galerie" className="scroll-mt-32 border-b border-ink/10 py-20 sm:py-24">
         <Container>

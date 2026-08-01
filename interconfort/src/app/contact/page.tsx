@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Fil from "@/components/Fil";
 import FormulaireProjet from "@/components/FormulaireProjet";
 import { Container, RuleTick, TitreSection } from "@/components/Ui";
@@ -47,7 +48,9 @@ export default function Page() {
       <section className="py-16 sm:py-20">
         <Container>
           <div className="grid gap-16 lg:grid-cols-[1.4fr_0.6fr] lg:gap-20">
-            <FormulaireProjet />
+            <Suspense fallback={<p className="text-sm text-steel">Chargement du formulaire…</p>}>
+              <FormulaireProjet />
+            </Suspense>
 
             <aside className="lg:border-l lg:border-ink/12 lg:pl-12">
               <TitreSection eyebrow="Nous joindre">Directement.</TitreSection>
