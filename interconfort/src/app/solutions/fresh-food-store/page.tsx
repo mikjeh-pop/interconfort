@@ -81,15 +81,15 @@ export default function Page() {
                       </p>
                     </div>
                     <div>
-                      <p className="data text-xl text-ink">Au-delà de 40 °C</p>
+                      <p className="data text-xl text-ink">Au-delà de 30 °C</p>
                       <h3 className="display mt-2 text-lg text-ink">
-                        Expositions extrêmes
+                        Fortes chaleurs
                       </h3>
                       <p className="mt-2 max-w-lg text-sm leading-relaxed text-ink-2">
-                        Une configuration renforcée — second système ventilé,
-                        sondes digitales calibrées et régulation pilotée par les
-                        sondes — sécurise le maintien entre 0 et 4 °C lorsque la
-                        température ambiante dépasse 40 °C.
+                        Au-delà de 30 °C ambiants, un second système ventilé est
+                        recommandé. Sur les installations qui en sont équipées,
+                        le maintien entre 0 et 4 °C a été constaté alors même que
+                        la température extérieure dépassait 40 °C.
                       </p>
                     </div>
                   </div>

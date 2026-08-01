@@ -42,14 +42,14 @@ export const freshFoodStore: Solution = {
   chiffres: [
     { valeur: "0–4 °C", label: "Froid maintenu, extérieur compris" },
     { valeur: "8", label: "Plateaux configurables" },
-    { valeur: "96", label: "Sélections maximum" },
-    { valeur: "2 496", label: "Produits en autonomie maximale" },
+    { valeur: "96", label: "Emplacements en très grand format" },
+    { valeur: "22″", label: "Écran tactile haute luminosité" },
   ],
   atouts: [
     {
       titre: "Double groupe froid piloté par sondes",
       texte:
-        "Plusieurs sondes digitales calibrées mesurent la température réelle à l'intérieur de l'appareil. Le second groupe prend le relais lorsqu'une dérive est détectée, ce qui permet de tenir la consigne même par forte chaleur extérieure.",
+        "Plusieurs sondes digitales calibrées mesurent la température réelle à l'intérieur de l'appareil. Le second groupe prend le relais dès qu'une dérive est détectée. Sur les installations équipées du second système ventilé, la consigne a été tenue alors que la température extérieure dépassait 40 °C.",
     },
     {
       titre: "Livraison sans chute",
@@ -79,17 +79,13 @@ export const freshFoodStore: Solution = {
   ],
   specs: [
     { label: "Fabricant", valeur: "Inter-Confort SA" },
-    {
-      label: "Dimensions hors toit",
-      valeur: "1 926 × 1 102 × 1 904 mm",
-      note: "Hauteur à confirmer : les sources internes indiquent 1 904 et 1 969 mm",
-    },
+    { label: "Dimensions hors toit", valeur: "1 926 × 1 102 × 1 969 mm" },
     { label: "Hauteur avec toit", valeur: "2 471 mm" },
     { label: "Poids", valeur: "760 à 900 kg selon configuration" },
     { label: "Alimentation", valeur: "230 V · 16 A" },
     { label: "Plateaux", valeur: "Jusqu'à 8, configurables" },
-    { label: "Sélections", valeur: "96 maximum" },
-    { label: "Capacité", valeur: "2 496 produits maximum" },
+    { label: "Sélections", valeur: "Jusqu'à 96 pour de très grandes barquettes, davantage sur des formats plus compacts" },
+    { label: "Capacité", valeur: "Variable selon le conditionnement, jusqu'à plusieurs milliers de produits" },
     { label: "Écran tactile", valeur: "22 pouces, haute luminosité", note: "21,5 ou 22 pouces selon la source, à trancher" },
     { label: "Isolation", valeur: "Polyuréthane 5 cm" },
     { label: "Structure", valeur: "Acier 2 mm, vernissage époxydique" },
@@ -134,13 +130,6 @@ export const freshFoodStore: Solution = {
       legende: "Remplissage plateau par plateau",
     },
     {
-      src: "/images/fresh-food-store/fresh-food-store-habillage-sushi.webp",
-      alt: "Exemple de personnalisation graphique du Fresh Food Store pour une offre de sushis",
-      w: 900,
-      h: 958,
-      legende: "Exemple de personnalisation graphique — projection",
-    },
-    {
       src: "/images/fresh-food-store/fresh-food-store-habillage-rouge.webp",
       alt: "Exemple de personnalisation graphique du Fresh Food Store en habillage rouge",
       w: 900,
@@ -151,7 +140,7 @@ export const freshFoodStore: Solution = {
   faq: [
     {
       q: "Le Fresh Food Store peut-il rester dehors toute l'année ?",
-      r: "Oui. L'appareil est conçu pour l'installation extérieure : isolation renforcée, structure acier vernie, vitrage anti-effraction et toit de protection. Le double groupe froid piloté par sondes maintient la consigne y compris lors d'expositions estivales prolongées. L'emplacement, le sol et le raccordement électrique sont vérifiés avant installation.",
+      r: "Oui. L'appareil est conçu pour l'installation extérieure : isolation renforcée, structure acier vernie, vitrage anti-effraction et toit de protection. Au-delà de 30 °C ambiants, un second système ventilé est recommandé ; les installations qui en disposent ont maintenu leur consigne alors que la température extérieure dépassait 40 °C. L'emplacement, le sol et le raccordement électrique sont vérifiés avant installation.",
     },
     {
       q: "Quels produits peut-on y distribuer ?",
@@ -159,7 +148,7 @@ export const freshFoodStore: Solution = {
     },
     {
       q: "Combien de produits l'appareil contient-il ?",
-      r: "Jusqu'à 96 sélections réparties sur 8 plateaux, soit 2 496 produits en configuration maximale. Le volume réel dépend du conditionnement : la largeur, la profondeur et la hauteur des emballages déterminent l'agencement des plateaux.",
+      r: "Cela dépend entièrement du conditionnement. Sur les plus grandes barquettes, comptez jusqu'à 96 emplacements répartis sur 8 plateaux. Sur des formats plus compacts — pots, desserts, verrines — la capacité est nettement supérieure. La largeur, la profondeur et la hauteur des emballages déterminent l'agencement, c'est pourquoi une étude de stockage précède toujours la commande.",
     },
     {
       q: "Faut-il un abri ou un kiosque ?",
@@ -187,14 +176,14 @@ export const multi610: Solution = {
   seo: {
     title: "MULTI 610 — distributeur automatique multi-produits à ascenseur",
     description:
-      "Distributeur automatique multi-produits à ascenseur de précision : 6 étagères modulables, 60 sélections, écran tactile 22 pouces, option froid 0–4 °C. Configuration simple ou avec module secondaire.",
+      "Distributeur automatique multi-produits à ascenseur de précision : 6 étagères modulables, 60 sélections, écran tactile 22 pouces, option froid 0–4 °C. Extensible par un module secondaire.",
     h1: "MULTI 610 — distributeur automatique multi-produits à ascenseur",
   },
   photo: {
-    src: "/images/multi-610/multi-610-face.webp",
-    alt: "Distributeur automatique MULTI 610 vu de face, vitrine éclairée, écran de sélection et zone de retrait basse",
-    w: 284,
-    h: 408,
+    src: "/images/multi-610/multi-610-integration-interieure.webp",
+    alt: "MULTI 610 encastré dans l'agencement bois d'une boulangerie, vitrine réfrigérée éclairée et clavier de sélection",
+    w: 1536,
+    h: 1024,
   },
   chiffres: [
     { valeur: "60", label: "Sélections maximum" },
@@ -214,7 +203,7 @@ export const multi610: Solution = {
         "Poussoir, tapis, spirales simples ou doubles, séparateurs modulables. Les systèmes cohabitent sur la même machine et l'espacement se règle selon la gamme.",
     },
     {
-      titre: "Capacité doublée par module secondaire",
+      titre: "Capacité extensible par module secondaire",
       texte:
         "Une console principale peut piloter un module complémentaire pour élargir le choix ou augmenter le volume disponible sans multiplier les interfaces.",
     },
@@ -245,7 +234,7 @@ export const multi610: Solution = {
     { label: "Température standard", valeur: "+4 °C à +25 °C" },
     { label: "Option froid", valeur: "0 °C à +4 °C" },
     { label: "Écran", valeur: "Tactile 22 pouces" },
-    { label: "Configuration double", valeur: "Console principale et module secondaire", note: "Appellation MULTI 610 double à confirmer" },
+    { label: "Extension", valeur: "Module secondaire piloté par la console principale" },
   ],
   galerie: [
     {
@@ -256,25 +245,18 @@ export const multi610: Solution = {
       legende: "Plateau de livraison vu de dessus",
     },
     {
-      src: "/images/multi-610/multi-610-principe-levage.webp",
-      alt: "Schéma du principe de montée de l'ascenseur du MULTI 610",
-      w: 1448,
-      h: 1086,
-      legende: "Principe de montée contrôlée",
+      src: "/images/multi-610/multi-610-kiosque-exterieur.webp",
+      alt: "Deux MULTI 610 abrités sous un kiosque extérieur en bois, vitrines éclairées",
+      w: 1536,
+      h: 1024,
+      legende: "Implantation sous kiosque — projection",
     },
     {
-      src: "/images/multi-610/multi-610-schema-ascenseur.webp",
-      alt: "Schéma du système d'ascenseur du MULTI 610",
-      w: 185,
-      h: 370,
-      legende: "Système d'ascenseur",
-    },
-    {
-      src: "/images/multi-610/multi-610-detail-ascenseur.webp",
-      alt: "Détail du mécanisme d'ascenseur du MULTI 610",
-      w: 245,
-      h: 103,
-      legende: "Détail du mécanisme",
+      src: "/images/multi-610/multi-610-module-secondaire.webp",
+      alt: "MULTI 610 avec son module secondaire, deux vitrines réfrigérées pilotées par une console centrale",
+      w: 1536,
+      h: 1024,
+      legende: "Console principale et module secondaire",
     },
     {
       src: "/images/multi-610/multi-610-zone-de-retrait.webp",
@@ -282,13 +264,6 @@ export const multi610: Solution = {
       w: 250,
       h: 216,
       legende: "Dépose en zone de retrait",
-    },
-    {
-      src: "/images/multi-610/multi-610-dimensions-plateau.webp",
-      alt: "Schéma coté de la surface utile du plateau du MULTI 610, 719,6 par 193,3 millimètres",
-      w: 1351,
-      h: 1013,
-      legende: "Surface utile du plateau",
     },
     {
       src: "/images/multi-610/multi-610-dimensions.webp",
@@ -300,8 +275,8 @@ export const multi610: Solution = {
   ],
   faq: [
     {
-      q: "Quelle différence entre le MULTI 610 et le MULTI 610 double ?",
-      r: "La configuration double associe une console principale à un module secondaire piloté depuis la même interface. Le client garde un seul écran et un seul paiement, mais dispose d'environ deux fois plus de références et de volume.",
+      q: "Peut-on augmenter la capacité du MULTI 610 ?",
+      r: "Oui. Un module secondaire peut être ajouté et piloté depuis la console principale. Le client conserve un seul écran et un seul paiement, tout en accédant à davantage de références et de volume.",
     },
     {
       q: "Quels produits l'ascenseur permet-il de distribuer ?",
@@ -469,7 +444,7 @@ export const comparatif = {
   lignes: [
     { label: "Usage principal", valeurs: ["Produits frais et plats préparés", "Multi-produits, formats mélangés", "Produits surgelés"] },
     { label: "Température", valeurs: ["0 à 4 °C maintenus", "+4 à +25 °C, option 0–4 °C", "Jusqu'à −25 °C"] },
-    { label: "Sélections maximum", valeurs: ["96", "60", "54 (6 × 9)"] },
+    { label: "Sélections", valeurs: ["96 en très grand format, davantage sinon", "60", "54 (6 × 9)"] },
     { label: "Système de livraison", valeurs: ["Convoyeur motorisé deux axes", "Ascenseur de précision", "Ascenseur de précision"] },
     { label: "Installation extérieure", valeurs: ["Oui, avec toit", "Étude spécifique", "Oui, avec toit"] },
     { label: "Écran tactile", valeurs: ["22 pouces", "22 pouces", "22 pouces"] },

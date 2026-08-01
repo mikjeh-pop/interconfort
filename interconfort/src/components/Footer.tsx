@@ -2,6 +2,9 @@ import Link from "next/link";
 import { navigation, societe } from "@/content/site";
 import { Container, RuleTick } from "./Ui";
 
+/** Repère de build : permet de vérifier d'un coup d'œil quelle version est en ligne. */
+const VERSION = new Date().toISOString().slice(0, 16).replace("T", " ");
+
 export default function Footer() {
   return (
     <footer className="bg-ink text-white">
@@ -87,7 +90,7 @@ export default function Footer() {
             © {new Date().getFullYear()} {societe.raisonSociale} —{" "}
             {societe.adresse.ville}, {societe.adresse.pays}
           </p>
-          <p className="data">Site de démonstration</p>
+          <p className="data">Site de démonstration · version {VERSION}</p>
         </div>
       </Container>
     </footer>

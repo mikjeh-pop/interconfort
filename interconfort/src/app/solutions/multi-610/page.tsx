@@ -32,7 +32,7 @@ const options = [
   "Lecteur code-barres / QR code",
   "Retrait de commande prépayée",
   "Option froid 0 à 4 °C",
-  "Module secondaire, capacité doublée",
+  "Module secondaire d'extension",
 ];
 
 export default function Page() {
@@ -84,11 +84,11 @@ export default function Page() {
                     </div>
                     <div className="relative aspect-[4/3] w-full bg-paper-2">
                       <Image
-                        src="/images/multi-610/multi-610-principe-levage.webp"
-                        alt="Schéma du principe de montée contrôlée de l’ascenseur du MULTI 610"
+                        src="/images/multi-610/multi-610-zone-de-retrait.webp"
+                        alt="Produits déposés dans la zone de retrait du MULTI 610 après descente du plateau"
                         fill
                         sizes="(max-width: 1024px) 100vw, 45vw"
-                        className="object-contain"
+                        className="object-cover"
                       />
                     </div>
                   </div>

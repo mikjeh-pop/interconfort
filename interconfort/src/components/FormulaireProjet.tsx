@@ -20,7 +20,6 @@ const solutionsEnvisagees = [
   "Je ne sais pas encore",
   "Fresh Food Store",
   "MULTI 610",
-  "MULTI 610 double",
   "IGLOO",
   "Pharmashop",
   "Technologies Magex",

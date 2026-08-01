@@ -108,3 +108,19 @@ summary:focus-visible {
 @media (scripting: none) {
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Ouverture : très lent rapprochement sur l'image active. */
+.hero-zoom {
+  transform: scale(1);
+  transition: transform 9000ms linear;
+}
+.hero-zoom--actif {
+  transform: scale(1.06);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-zoom,
+  .hero-zoom--actif {
+    transform: none;
+    transition: none;
+  }
+}

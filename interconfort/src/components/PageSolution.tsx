@@ -3,6 +3,7 @@ import Fil from "./Fil";
 import FaqBloc from "./FaqBloc";
 import Galerie from "./Galerie";
 import Reveal from "./Reveal";
+import SousNav from "./SousNav";
 import SpecTable from "./SpecTable";
 import { Bouton, Container, RuleTick, TitreSection } from "./Ui";
 import type { Solution } from "@/content/solutions";
@@ -77,6 +78,16 @@ export default function PageSolution({
         <RuleTick />
       </section>
 
+      <SousNav
+        sections={[
+          { id: "presentation", libelle: "Présentation" },
+          { id: "caracteristiques", libelle: "Caractéristiques" },
+          { id: "donnees-techniques", libelle: "Données techniques" },
+          { id: "galerie", libelle: "Galerie" },
+          { id: "faq", libelle: "Questions fréquentes" },
+        ]}
+      />
+
       <section className="border-b border-ink/10 bg-paper-2">
         <Container>
           <dl className="grid grid-cols-2 divide-ink/10 py-10 sm:grid-cols-4 sm:divide-x">
@@ -100,7 +111,7 @@ export default function PageSolution({
         </Container>
       </section>
 
-      <section className="border-b border-ink/10 py-20 sm:py-24">
+      <section id="presentation" className="scroll-mt-32 border-b border-ink/10 py-20 sm:py-24">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
             <TitreSection eyebrow="Présentation">{solution.nom}</TitreSection>
@@ -111,7 +122,7 @@ export default function PageSolution({
         </Container>
       </section>
 
-      <section className="border-b border-ink/10 py-20 sm:py-24">
+      <section id="caracteristiques" className="scroll-mt-32 border-b border-ink/10 py-20 sm:py-24">
         <Container>
           <TitreSection eyebrow="Caractéristiques">
             Ce qui fait la différence.
@@ -159,7 +170,7 @@ export default function PageSolution({
         </Container>
       </section>
 
-      <section className="border-b border-ink/10 py-20 sm:py-24">
+      <section id="galerie" className="scroll-mt-32 border-b border-ink/10 py-20 sm:py-24">
         <Container>
           <TitreSection eyebrow="Galerie">
             {solution.nom} en images.
@@ -170,7 +181,7 @@ export default function PageSolution({
         </Container>
       </section>
 
-      <section className="border-b border-ink/10 bg-paper-2 py-20 sm:py-24">
+      <section id="faq" className="scroll-mt-32 border-b border-ink/10 bg-paper-2 py-20 sm:py-24">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.6fr_1.4fr] lg:gap-20">
             <TitreSection eyebrow="Questions fréquentes">

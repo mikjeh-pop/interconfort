@@ -1,4 +1,5 @@
 import { machinesMagex, photosPharmashop } from "./medias-distants";
+import { references } from "./references";
 
 export type Realisation = {
   titre: string;
@@ -22,6 +23,12 @@ export const categories = [
 ] as const;
 
 export const realisations: Realisation[] = [
+  ...references.map((r) => ({
+    titre: r.afficherNom ? r.nomClient : r.activite,
+    categorie: "Fresh Food Store",
+    legende: r.activite,
+    image: r.image,
+  })),
   {
     titre: "Fresh Food Store en extérieur",
     categorie: "Fresh Food Store",
@@ -66,13 +73,14 @@ export const realisations: Realisation[] = [
     },
   },
   {
-    titre: "MULTI 610 en configuration standard",
+    titre: "MULTI 610 intégré en boulangerie",
     categorie: "MULTI 610",
+    legende: "Encastrement en agencement — projection",
     image: {
-      src: "/images/multi-610/multi-610-face.webp",
-      alt: "Distributeur MULTI 610 vu de face",
-      w: 284,
-      h: 408,
+      src: "/images/multi-610/multi-610-integration-interieure.webp",
+      alt: "MULTI 610 encastré dans l'agencement bois d'une boulangerie",
+      w: 1536,
+      h: 1024,
     },
   },
   { titre: "Console Pharma « Night & Safe »", categorie: "Pharmashop", legende: photosPharmashop[0].legende, image: { ...photosPharmashop[0], w: 1200, h: 1600 } },

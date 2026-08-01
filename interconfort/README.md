@@ -59,6 +59,20 @@ Aucune clé n'est présente dans le code. Si les variables d'envoi ne sont pas d
 
 Les anciennes URL WordPress sont redirigées en 301 vers les nouvelles (voir `next.config.ts`).
 
+## Direction visuelle
+
+Le site s'ouvre sur un carrousel plein écran de trois installations réelles, en fondu enchaîné lent avec un très léger rapprochement d'image. Il s'immobilise sur la première photo si le visiteur a demandé des animations réduites.
+
+Les autres éléments de dynamisme : chiffres décomptés à l'apparition, navigation interne collante sur les fiches produit avec surlignage de la section lue, en-tête qui se compresse au défilement, apparitions en cascade au scroll, agrandissements lents au survol des photos, et une grille de références où le texte de contexte se révèle au survol.
+
+Tout reste sous `prefers-reduced-motion` : rien ne bouge pour un visiteur qui l'a désactivé, et les chiffres restent lisibles et exacts.
+
+## Références clientes
+
+Cinq installations en service, dans `src/content/references.ts` : Des chefs de la région, Sushic, L'Atelier du Bon Wagon, Afhaalboutique Den Artiest, Les Ruchers de Normandie.
+
+Chaque entrée porte un booléen `afficherNom`. Passé à `false`, la photo reste publiée mais le nom de l'enseigne disparaît de la légende. **Réglé sur `false` pour les cinq références : les photos sont publiées sans citer les enseignes.** Passer une entrée à `true` si l'accord du client concerné est obtenu — l'enseigne reste de toute façon visible sur la photographie elle-même.
+
 ## Positionnement face à la concurrence
 
 Le concurrent français de référence est Magex France (magexfrance.fr), distributeur des mêmes technologies italiennes. Analyse comparative et choix retenus :
@@ -99,11 +113,20 @@ Tout le texte modifiable est centralisé dans `src/content/` : `site.ts` (coordo
 
 **Provenance des fichiers locaux :** archive statique de distri-popfrais.fr fournie par le client. Les fichiers ont été renommés pour supprimer toute référence aux marques commerciales françaises ; un doublon strict et un logo de marque tierce ont été écartés.
 
-**Contrôle des noms interdits.** Aucune occurrence de POP'FRAIS, POP'TOUT, POP'ICE, POP'BOX ni Multi Pro Matik dans les noms de fichiers, les textes, les balises alt, les métadonnées ou le code source. Le contrôle est reproductible :
+**Contrôle des marques interdites, y compris à l'intérieur des images.**
 
 ```bash
-grep -rniE "pop.?(frais|tout|ice|box)|multi.?pro.?matik" src public next.config.ts
+npm run verifier:marques
 ```
+
+Ce script contrôle trois choses : les noms de fichiers, le code source et les métadonnées, **et le texte incrusté dans les images par reconnaissance optique**. Ce troisième contrôle est indispensable : un habillage de machine peut porter une marque parfaitement lisible sur la photo sans qu'aucune recherche textuelle ne la détecte. Il exige `tesseract-ocr` sur la machine (`sudo apt-get install tesseract-ocr tesseract-ocr-fra`) ; sans lui, seuls les deux premiers contrôles s'exécutent, avec un avertissement.
+
+**Deux visuels retirés à ce titre :**
+
+- `fresh-food-store-habillage-sushi.webp` — la mention POPFRAIS était lisible sur l'habillage de la machine, détectée par OCR.
+- `multi-610-face.webp` — la même mention figurait sur le panneau latéral. C'était l'unique photographie réelle du MULTI 610 : la fiche produit utilise désormais un rendu d'intégration en agencement, signalé comme projection. **Une photographie réelle et non marquée du MULTI 610 reste à fournir.**
+
+**Visuels retirés à la demande d'Inter-Confort.** Trois schémas de la galerie MULTI 610 — schéma d'ascenseur, détail du mécanisme, plan coté du plateau. La cote 719,60 × 193,3 mm qu'ils portaient est conservée en texte dans le bloc « Stockage et livraison ».
 
 **Visuels écartés volontairement.** Les rendus « univers », le kiosque extérieur, l'intégration intérieure et le module secondaire du MULTI 610 sont des illustrations non contractuelles, pas des photographies. Ils ne figurent pas dans le projet.
 
@@ -117,13 +140,15 @@ Pour récupérer la médiathèque du site actuel, l'API WordPress est la voie la
 
 Ces points sont signalés dans l'interface par un marqueur ▲ ou par un encadré.
 
-1. **Hauteur du Fresh Food Store** — 1 904 mm sur le site actuel, 1 969 mm sur la fiche technique. Écart de 65 mm à trancher.
-2. **Taille de l'écran** — 22 pouces ou 21,5 pouces selon la source.
+1. ~~Hauteur du Fresh Food Store~~ — **tranché : 1 969 mm.**
+2. ~~Taille de l'écran~~ — **tranché : 22 pouces.**
 3. **Ancienneté** — le site actuel affiche « 35 ans », « 34 ans » et « depuis 1986 » selon les pages. Le site retenu la formulation « depuis 1986 », qui ne se périme pas. En 2026, cela représente 40 ans.
-4. **MULTI 610 double** — confirmé comme étant la configuration console principale + module secondaire ? L'appellation n'apparaît pas dans les sources.
+4. ~~MULTI 610 double~~ — **appellation abandonnée.** Le site parle d'un MULTI 610 extensible par module secondaire, sans nommer de variante « double ».
 5. **Périmètre du logiciel** — les fonctions listées sont celles documentées à ce jour. Chacune doit être confirmée par version et par machine.
 6. **Statut Magex et PharmaShop24** — préciser la nature exacte de la relation actuelle.
-7. **Réalisations** — droit de citer les clients nommément, et légendes vérifiables (lieu, date).
+7. ~~Citation des clients~~ — **tranché : aucun nom en légende.**
+
+Sur la capacité du Fresh Food Store, le site ne présente plus 96 comme un plafond : ce chiffre correspond aux très grandes barquettes, la capacité étant nettement supérieure sur des formats plus compacts.
 
 ## Contenus volontairement non repris
 
